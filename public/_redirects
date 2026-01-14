@@ -1,0 +1,7 @@
+# Netlify redirects
+/*    /index.html   200
+
+# Force HTTPS
+http://glaswerk-elements.de/*  https://glaswerk-elements.de/:splat  301!
+http://www.glaswerk-elements.de/*  https://glaswerk-elements.de/:splat  301!
+https://www.glaswerk-elements.de/*  https://glaswerk-elements.de/:splat  301!

@@ -1,0 +1,18 @@
+# robots.txt für Glaswerk Elements
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://glaswerkelements.de/sitemap.xml
+
+# Crawl-delay für bessere Performance
+Crawl-delay: 0
+
+# Wichtige Seiten hervorheben
+Allow: /
+Allow: /datenschutz
+Allow: /impressum
+
+# Unwichtige Ressourcen
+Disallow: /assets/
