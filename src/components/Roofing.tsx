@@ -1,12 +1,10 @@
 import { CloudRain, Sun, Lightbulb } from 'lucide-react';
 
-export default function Roofing() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+interface RoofingProps {
+  onOpenForm: () => void;
+}
+
+export default function Roofing({ onOpenForm }: RoofingProps) {
 
   return (
     <section id="roofing" className="py-20 bg-glaswerk-white">
@@ -73,7 +71,7 @@ export default function Roofing() {
             </div>
 
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={onOpenForm}
               className="bg-stahlblau text-white px-8 py-3 rounded-md hover:bg-stahlblau/90 transition-colors font-semibold"
             >
               Überdachung planen

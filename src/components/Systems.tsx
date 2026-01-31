@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { Move, Minimize2, Maximize, ChevronLeft, ChevronRight } from 'lucide-react';
 
-export default function Systems() {
+interface SystemsProps {
+  onOpenForm: () => void;
+}
+
+export default function Systems({ onOpenForm }: SystemsProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const images = [
@@ -17,13 +21,6 @@ export default function Systems() {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
-  };
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   return (
@@ -133,7 +130,7 @@ export default function Systems() {
             </div>
 
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={onOpenForm}
               className="bg-stahlblau text-white px-8 py-3 rounded-md hover:bg-stahlblau/90 transition-colors font-semibold"
             >
               System anfragen

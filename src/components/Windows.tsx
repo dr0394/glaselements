@@ -1,12 +1,10 @@
 import { Sun, Shield, Volume2, Thermometer } from 'lucide-react';
 
-export default function Windows() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+interface WindowsProps {
+  onOpenForm: () => void;
+}
+
+export default function Windows({ onOpenForm }: WindowsProps) {
 
   const features = [
     {
@@ -70,7 +68,7 @@ export default function Windows() {
             </div>
 
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={onOpenForm}
               className="bg-stahlblau text-white px-8 py-3 rounded-md hover:bg-stahlblau/90 transition-colors font-semibold"
             >
               Fenster anfragen

@@ -1,6 +1,10 @@
 import { X, Check } from 'lucide-react';
 
-export default function ProblemSolution() {
+interface ProblemSolutionProps {
+  onOpenForm: () => void;
+}
+
+export default function ProblemSolution({ onOpenForm }: ProblemSolutionProps) {
   const problems = [
     'Alte, undichte Fenster treiben Heizkosten in die Höhe',
     'Standardlösungen passen nicht zur individuellen Architektur',
@@ -67,12 +71,7 @@ export default function ProblemSolution() {
 
         <div className="text-center mt-12">
           <button
-            onClick={() => {
-              const element = document.getElementById('contact');
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
+            onClick={onOpenForm}
             className="bg-stahlblau text-white px-8 py-4 hover:bg-stahlblau/90 transition-all font-normal text-lg"
           >
             Jetzt kostenlose Beratung sichern

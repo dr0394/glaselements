@@ -62,16 +62,16 @@ function App() {
       <Header onOpenForm={() => setIsFormOpen(true)} />
       <main>
         <Hero onOpenForm={() => setIsFormOpen(true)} />
-        <ProblemSolution />
+        <ProblemSolution onOpenForm={() => setIsFormOpen(true)} />
         <Products />
-        <Windows />
-        <Doors />
-        <Systems />
-        <Roofing />
+        <Windows onOpenForm={() => setIsFormOpen(true)} />
+        <Doors onOpenForm={() => setIsFormOpen(true)} />
+        <Systems onOpenForm={() => setIsFormOpen(true)} />
+        <Roofing onOpenForm={() => setIsFormOpen(true)} />
         <About />
         <Advantages />
         <References />
-        <Process />
+        <Process onOpenForm={() => setIsFormOpen(true)} />
         <Contact />
       </main>
       <Footer onNavigate={handleNavigate} />

@@ -25,7 +25,11 @@ function ProcessStep({ number, icon, title, description }: StepProps) {
   );
 }
 
-export default function Process() {
+interface ProcessProps {
+  onOpenForm: () => void;
+}
+
+export default function Process({ onOpenForm }: ProcessProps) {
   const steps: Omit<StepProps, 'number'>[] = [
     {
       icon: <MessageCircle size={32} />,
@@ -81,12 +85,7 @@ export default function Process() {
             Ihre Vision Wirklichkeit werden zu lassen.
           </p>
           <button
-            onClick={() => {
-              const element = document.getElementById('contact');
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
+            onClick={onOpenForm}
             className="bg-stahlblau text-white px-8 py-3 rounded-md hover:bg-stahlblau/90 transition-colors font-semibold"
           >
             Jetzt Beratung anfragen

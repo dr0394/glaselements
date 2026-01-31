@@ -6,13 +6,11 @@ interface DoorModel {
   image: string;
 }
 
-export default function Doors() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+interface DoorsProps {
+  onOpenForm: () => void;
+}
+
+export default function Doors({ onOpenForm }: DoorsProps) {
 
   const doorModels: DoorModel[] = [
     {
@@ -117,7 +115,7 @@ export default function Doors() {
               <div className="p-6">
                 <p className="text-anthrazit/70 mb-4">{model.description}</p>
                 <button
-                  onClick={() => scrollToSection('contact')}
+                  onClick={onOpenForm}
                   className="text-stahlblau font-semibold hover:underline"
                 >
                   Anfragen →
@@ -129,7 +127,7 @@ export default function Doors() {
 
         <div className="text-center mt-12">
           <button
-            onClick={() => scrollToSection('contact')}
+            onClick={onOpenForm}
             className="bg-stahlblau text-white px-8 py-4 rounded-md hover:bg-stahlblau/90 transition-colors font-semibold text-lg"
           >
             Tür auswählen und anfragen
