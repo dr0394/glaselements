@@ -1,6 +1,10 @@
 import { ArrowRight, Check, Star } from 'lucide-react';
 
-export default function Hero() {
+interface HeroProps {
+  onOpenForm: () => void;
+}
+
+export default function Hero({ onOpenForm }: HeroProps) {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -63,7 +67,7 @@ export default function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <button
-                onClick={() => scrollToSection('contact')}
+                onClick={onOpenForm}
                 className="bg-stahlblau text-white px-8 py-4 hover:bg-stahlblau/90 transition-all font-normal text-lg"
               >
                 Kostenlose Beratung

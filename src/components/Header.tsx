@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
-export default function Header() {
+interface HeaderProps {
+  onOpenForm: () => void;
+}
+
+export default function Header({ onOpenForm }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
@@ -39,7 +43,7 @@ export default function Header() {
           </nav>
 
           <button
-            onClick={() => scrollToSection('contact')}
+            onClick={onOpenForm}
             className="hidden md:block bg-stahlblau text-white px-6 py-2 rounded-md hover:bg-stahlblau/90 transition-colors font-semibold"
           >
             Beratung anfragen
@@ -64,7 +68,10 @@ export default function Header() {
             <button onClick={() => scrollToSection('process')} className="mobile-nav-link">Ablauf</button>
             <button onClick={() => scrollToSection('contact')} className="mobile-nav-link">Kontakt</button>
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => {
+                onOpenForm();
+                setIsMenuOpen(false);
+              }}
               className="w-full bg-stahlblau text-white px-6 py-3 rounded-md hover:bg-stahlblau/90 transition-colors font-semibold"
             >
               Beratung anfragen

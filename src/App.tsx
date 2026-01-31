@@ -59,9 +59,9 @@ function App() {
 
   return (
     <div className="min-h-screen bg-anthrazit smooth-scroll">
-      <Header />
+      <Header onOpenForm={() => setIsFormOpen(true)} />
       <main>
-        <Hero />
+        <Hero onOpenForm={() => setIsFormOpen(true)} />
         <ProblemSolution />
         <Products />
         <Windows />
