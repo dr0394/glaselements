@@ -44,6 +44,13 @@ export default function Products() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <ProductCard
+            icon={<Home size={48} />}
+            title="Überdachungen"
+            description="Glas-Terrassenüberdachungen und Balkonsysteme für wettergeschützte Freiräume"
+            onClick={() => scrollToSection('roofing')}
+          />
+
+          <ProductCard
             icon={<Maximize2 size={48} />}
             title="Fenster"
             description="Aluminium- und Glasfenster mit hoher Energieeffizienz für maximalen Lichteinfall"
@@ -62,13 +69,6 @@ export default function Products() {
             title="Systeme"
             description="Schiebe- und Faltsysteme, Glas-Schiebesysteme für raumhohe Öffnungen"
             onClick={() => scrollToSection('systems')}
-          />
-
-          <ProductCard
-            icon={<Home size={48} />}
-            title="Überdachungen"
-            description="Glas-Terrassenüberdachungen und Balkonsysteme für wettergeschützte Freiräume"
-            onClick={() => scrollToSection('roofing')}
           />
         </div>
       </div>
