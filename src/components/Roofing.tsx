@@ -11,7 +11,7 @@ export default function Roofing({ onOpenForm }: RoofingProps) {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/ChatGPT_Image_12._Feb._2026,_18_28_56.png)'
+          backgroundImage: 'url(/ChatGPT_Image_12._Feb._2026,_18_35_17.png)'
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-anthrazit/95 via-anthrazit/85 to-anthrazit/70"></div>
