@@ -63,8 +63,8 @@ function App() {
       <main>
         <Hero onOpenForm={() => setIsFormOpen(true)} />
         <ProblemSolution onOpenForm={() => setIsFormOpen(true)} />
-        <Roofing onOpenForm={() => setIsFormOpen(true)} />
         <Products />
+        <Roofing onOpenForm={() => setIsFormOpen(true)} />
         <Windows onOpenForm={() => setIsFormOpen(true)} />
         <Doors onOpenForm={() => setIsFormOpen(true)} />
         <Systems onOpenForm={() => setIsFormOpen(true)} />
