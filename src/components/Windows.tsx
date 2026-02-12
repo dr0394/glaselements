@@ -33,7 +33,15 @@ export default function Windows({ onOpenForm }: WindowsProps) {
     <section id="windows" className="py-20 bg-anthrazit">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className="relative md:order-1">
+            <img
+              src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Moderne Fenster"
+              className="rounded-lg shadow-2xl"
+            />
+          </div>
+
+          <div className="md:order-2">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-glaswerk-white">
               Fenster – Licht & Energieeffizienz
             </h2>
@@ -73,14 +81,6 @@ export default function Windows({ onOpenForm }: WindowsProps) {
             >
               Fenster anfragen
             </button>
-          </div>
-
-          <div className="relative">
-            <img
-              src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800"
-              alt="Moderne Fenster"
-              className="rounded-lg shadow-2xl"
-            />
           </div>
         </div>
       </div>
