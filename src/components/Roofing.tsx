@@ -36,17 +36,17 @@ export default function Roofing({ onOpenForm }: RoofingProps) {
             backgroundImage: `url(${image})`
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-anthrazit/95 via-anthrazit/85 to-anthrazit/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-anthrazit/50 via-anthrazit/40 to-anthrazit/30"></div>
         </div>
       ))}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg">
             Überdachungen – Schutz & Transparenz
           </h2>
 
-          <p className="text-xl mb-12 text-white/90 leading-relaxed">
+          <p className="text-xl mb-12 text-white/90 leading-relaxed drop-shadow-md">
             Genießen Sie Ihre Terrasse oder Ihren Balkon das ganze Jahr über. Unsere Glasüberdachungen
             bieten optimalen Schutz vor Wind und Wetter, während Sie gleichzeitig von maximaler
             Lichtdurchlässigkeit profitieren.
