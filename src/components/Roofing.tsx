@@ -1,21 +1,43 @@
 import { CloudRain, Sun, Lightbulb } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 interface RoofingProps {
   onOpenForm: () => void;
 }
 
 export default function Roofing({ onOpenForm }: RoofingProps) {
+  const images = [
+    '/ChatGPT_Image_12._Feb._2026,_18_35_17.png',
+    '/e86227b4-9432-4fe7-bff1-2bc3d805dadf.jpg',
+    '/SlideCold23_scale-2-4-e1719987469973-qqjyew1jtpoeky573c6h5j1kue7rrekkg4g98foml4.png',
+    '/SkyView_scale2-2-2-qqma1wdog7itgshgwv3cdplt4tc0us2if8i89r8aqg.png',
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   return (
     <section id="roofing" className="relative py-32 bg-glaswerk-white overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'url(/ChatGPT_Image_12._Feb._2026,_18_35_17.png)'
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-anthrazit/95 via-anthrazit/85 to-anthrazit/70"></div>
-      </div>
+      {images.map((image, index) => (
+        <div
+          key={image}
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{
+            backgroundImage: `url(${image})`
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-anthrazit/95 via-anthrazit/85 to-anthrazit/70"></div>
+        </div>
+      ))}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
@@ -93,6 +115,21 @@ export default function Roofing({ onOpenForm }: RoofingProps) {
           >
             Überdachung planen
           </button>
+
+          <div className="flex gap-3 mt-8">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentImageIndex(index)}
+                className={`h-2 rounded-full transition-all ${
+                  index === currentImageIndex
+                    ? 'w-12 bg-white'
+                    : 'w-2 bg-white/40 hover:bg-white/60'
+                }`}
+                aria-label={`Bild ${index + 1} anzeigen`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
