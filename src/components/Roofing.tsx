@@ -11,6 +11,7 @@ export default function Roofing({ onOpenForm }: RoofingProps) {
     '/e86227b4-9432-4fe7-bff1-2bc3d805dadf.jpg',
     '/SlideCold23_scale-2-4-e1719987469973-qqjyew1jtpoeky573c6h5j1kue7rrekkg4g98foml4.png',
     '/SkyView_scale2-2-2-qqma1wdog7itgshgwv3cdplt4tc0us2if8i89r8aqg.png',
+    '/ChatGPT_Image_12._Feb._2026,_19_06_12.png',
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
